@@ -25,7 +25,6 @@ const App = ({bgColor,color,setColor,setBgColor ,setToggleMenu, isToggleMenu,wtC
   }, [])
 
   useEffect(() => {
-
     const handleResize = () => {
       setHeight(window.innerHeight);
       setWidth(window.innerWidth);
@@ -81,7 +80,9 @@ const App = ({bgColor,color,setColor,setBgColor ,setToggleMenu, isToggleMenu,wtC
                   wtColor={wtColor}/>
      </div>
     <div className={styles.footer}>
-      <Footer color={color} 
+      <Footer 
+      setToggleMenu={setToggleMenu}
+      color={color} 
       bgColor={bgColor}
       setColor={setColor}
       />

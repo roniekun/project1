@@ -1,46 +1,65 @@
 .container{
     display: flex;
     position: fixed;
-    height: 100vh;
-    top: 0;
-    width: 100vw;
-    transform: translateY(-100%);
-    background-color: black;
-    z-index: 99;
-    padding-top: 5%;
+    height: 100%;
+    bottom: 0;
+    width: 100%;
+    background-color: #1B1918;
+    z-index: 9999;
+    padding-inline: 5%;
+    padding-top: 2%;
     overflow: hidden;
 
     .content{
         display: flex;
         width: 100%;
-        justify-content: space-between;
+        justify-content: space-around;
         flex-direction: column;
-        padding-block: 10%;
+        padding-block: 5%;
         align-items: center;
         height: 100%;
-        padding: 5%;
         overflow: hidden;
+    
+        .btn{
+            position: fixed;
+            right: 5%;
+            top: 10%;
+            padding: 1rem;
+            background: transparent;
+            font-family: inherit;
+            color: white;
+            border:none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            text-decoration: underline;
+            z-index: 1;
+        }
 
     & .linksContainer{
             display: flex;
             flex-direction: column;
             position: relative;
+            justify-content: center;
+            align-items: center;
             width: 100%;
-            gap: 20px;
             overflow: hidden;
-            padding-block: 5%;
 
-    & .title{
-        color: gray;
-        font-size: 14px;
-        font-weight: 500;
-        padding-block: 5%;
-        position: relative;
-        font-family: sans-serif;
-        text-transform: uppercase;
-
-    }
-    & .title::after{
+        & .title{
+            color: black;
+            align-self: start;
+            font-size: 14px;
+            font-weight: 500;
+            position: relative;
+            width: fit-content;
+            border:  1px gray solid;
+            padding: .5rem 1rem;
+            border-radius: 30px;
+            font-family: sans-serif;
+            text-transform: uppercase;
+            background-color: whitesmoke;
+            margin-bottom: 2rem;
+        }
+    /* & .title::after{
             content: '';
             left: 0;
             width: 100%;
@@ -49,8 +68,22 @@
             bottom: 0;
             background-color: lightgray;
             height: 1px;
-    
-    }
+    } */
+            & .link{
+                list-style: none;
+                color: whitesmoke;
+                width: 100%;
+                font-family: 'Clash Display';
+                display: flex;
+                text-transform: capitalize;
+                flex-direction: column;
+
+                & .linkSpan{
+                    background-color: gray;
+                    height: 2px;
+                    width: 0;
+                }
+            }
     }
 
      & .socialContainer{
@@ -59,22 +92,27 @@
             position: relative;
             position: relative;
             width: 100%;
+            gap: 2rem;
             align-self: flex-end;
-            height: 15%;
+            height: auto;
             overflow-y: hidden;
             
         
         &   .title{
-                color: gray;
+                color: black;
+                background-color: whitesmoke;
                 font-size: 14px;
                 font-weight: 500;
                 font-family: sans-serif;
                 text-transform: uppercase;
-                margin-block: 5%;
+                border:  1px gray solid;
+                padding: .5rem 1rem;
+                border-radius: 30px;
+                width: fit-content;
             }
     
         }
-       & .socialContainer::before{
+       /* & .socialContainer::before{
             content: '';
             width: 100%;
             position: absolute;
@@ -82,7 +120,7 @@
             top: 0;
             background-color: lightgray;
             height: 1px;
-        }
+        } */
         
     }
    

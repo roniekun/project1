@@ -2,34 +2,28 @@
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    width: 100vw;
+    width: 100%;
     justify-content: flex-start;
-    gap: 14px;
+    gap: 1.2rem;
     padding: 2em;
-
+    padding-inline: 10%;
+    font-family: 'Clash Display';
+    text-transform: capitalize;
     .sitemap{
         width: 100%;
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 1rem;
         position: relative;
         padding-block: .5em;
 
         & h4{
-            color: gray;
+            color: black;
+            font-weight: 500;
+            font-size: 1.2rem;
         }
     }
-    .sitemap::before{
-        content: '';
-        width: 100%;
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        background-color: lightgray;
-        height: 1px;
-        mix-blend-mode: difference;
 
-    }
 .itemContainer{
     display: flex;
     justify-content: space-between;
@@ -41,55 +35,51 @@
         position: relative;
         flex-direction: column;
         width: 100%;
-        gap:10px;
+        gap:1.2rem;
         padding-block: .5em;
 
         & h4{
-            color: gray;
+            color: black;
+            font-weight: 500;
+            font-size: 1.2rem;
         }
     }
     .emailContainer{
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap:1.2rem;
         justify-content: center;
         align-items: center;
 
         & p{
-            text-transform: uppercase;
+            color: gray;
+            text-transform: lowercase;
+            font-size: 1.2rem;
         }
         & h4{
-            color: gray;
+            color: black;
+            font-weight: 500;
+            font-size: 1.2rem;
             align-self: flex-start;
         }
     }
 
 }
-/* .itemContainer::before{
-    content: '';
-    width: 100%;
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    background-color: lightgray;
-    height: 1px;
-    mix-blend-mode: difference;
-} */
+
 
     .date{
         align-self: center;
-        font-size: 16px;
-        margin: 0;
         font-weight: 500;
-        color: gray;
-        text-transform: uppercase;
+         font-size: 1.2rem;
+        margin: 0;
+        text-transform: capitalize;
     }
 }
 
 @media(max-width: 1024px){
 
     .container{
-        padding-inline: 1em;
+        padding-inline: 1rem;
 
     .itemContainer{
         flex-direction: column;

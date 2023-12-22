@@ -4,9 +4,8 @@
                                          'three three three three'
                                         'three  three three three'
                                         'four four four four';
-    width: 100vw;
+    width: 100%;
     height: auto;
-    background-color: #f4f4f4;
 
     .header{
         grid-area:  one;

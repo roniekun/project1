@@ -12,10 +12,10 @@ const FAQ = ({setColor,color,setBgColor,bgColor,btColor,wtColor}) => {
 
   return (
     <motion.div
-    initial={{ y: 50, zIndex: 2 }}
-    animate={{opacity:1, y:0, zIndex: 1 }}
+    initial={{ opacity: 0, zIndex: 2 }}
+    animate={{opacity:1, zIndex: 1 }}
     transition={{duration: .3}}
-    exit={{opacity: 0, y: -50, scale: .95}}
+    exit={{opacity: 0, y: -25,  scale: .98}}
     className={styles.container}>
       <h2>Frequently Asked Questions</h2> 
       <p>*for demo purpose*</p>

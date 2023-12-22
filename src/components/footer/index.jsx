@@ -3,7 +3,10 @@ import styles from './index.module.css'
 import Navlinks from '../navigation/navlinks';
 import Socials from '../../assets/icons/soclals';
 
-const Footer = ({color, bgColor, setColor}) => {
+const Footer = ({
+color, bgColor, setColor,
+setToggleMenu
+}) => {
 
   const date = new Date();
     // EMAIL CONFIG   // EMAIL CONFIG   // EMAIL CONFIG   // EMAIL CONFIG   // EMAIL CONFIG
@@ -17,14 +20,17 @@ const Footer = ({color, bgColor, setColor}) => {
     };
 
   return (
-    <div
-    style={{background: 'black'}}
+    <footer
+    style={{background: 'whitesmoke'}}
      className={styles.container}>
         <div className={styles.sitemap}>
         <h4>Sitemap</h4>
-        <Navlinks linkProps={{fontSize: '16px',
-                                                color: 'whitesmoke',
-                                                textTransform: 'uppercase',
+        <Navlinks
+        setToggleMenu={setToggleMenu}
+         linkProps={{fontSize: '1.2rem',
+                                                color: 'gray',
+                                                fontWeight:'500',
+                                                textTransform: 'capitalize',
       }}
       containerProps={{ gap: '14px'
       }}
@@ -35,21 +41,25 @@ const Footer = ({color, bgColor, setColor}) => {
           <h4>Let&apos;s Connect </h4>
         <Socials
         containerProps={{gap:'14px', flexWrap: 'wrap'}}
-          linkProps={{ color: 'whitesmoke',
-                                textTransform: 'uppercase',
-                                fontSize: '16px'}}
+          linkProps={{ color: 'gray',
+                                textTransform: 'capitalize',
+                                fontWeight: '500',
+                                fontSize: '1.2rem'}}
           displayNames={true}/>
       </div>
       <div className={styles.emailContainer}>
       <h4>Email Me</h4>
-      <p onClick={handleEmailClick} style={{color: "white"}}>roniebenitez01@gmail.com</p>
+      <p onClick={handleEmailClick} 
+      style={{
+        color: 'gray',
+        fontWeight: '500',
+      }}>
+        roniebenitez01@gmail.com</p>
          </div>
       </div>
- 
-
-      <h5 className={styles.date}>&copy; {date.getFullYear()} All Rights Reserved </h5>
-       
-    </div>
+      <h5 className={styles.date}>
+        Copyright &copy; {date.getFullYear()}</h5>
+    </footer>
   )
 }
 

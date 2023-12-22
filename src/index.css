@@ -1,9 +1,17 @@
-@tailwind base;
+  @import url('https://fonts.googleapis.com/css2?family=Jockey+One&family=Thasadith:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
 /* ::-webkit-scrollbar{
   display: none;
+} */
+
+/* @font-face {
+  font-family: 'Roboto';
+  src:  url('assets/fonts/roboto/RobotoCondensed-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 } */
 :root{
     --gold: #FFB600;
@@ -19,13 +27,13 @@
 
 *{
   box-sizing: border-box;
+  /* outline: lightgray dashed; */
   margin: 0;
 }
 
 body {
-   margin: 0;
-   font-family: 'Manrope', sans-serif;
-   font-stretch: extra-condensed;
+   font-size: 16px;
+   font-family:'Thasadith', sans-serif;
     font-weight: 400;
    -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

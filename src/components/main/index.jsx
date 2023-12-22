@@ -11,6 +11,7 @@ import Wedding from '../pages/wedding'
 import Birthday from '../pages/birthday'
 import Product from '../pages/product'
 import Family from '../pages/family'
+import NotFound from '../pages/notfound'
 
 const Main = ({setColor,
                           color,btColor,wtColor,
@@ -18,7 +19,7 @@ const Main = ({setColor,
                           bgColor}) => {
   const location = useLocation();
   return (
-    <div
+    <main
      className={styles.container}>
       <AnimatePresence initial={false} mode='wait'>
       <Routes location={location} key={location.key}>     
@@ -53,9 +54,10 @@ const Main = ({setColor,
               <Route exact path='/gallery-birthdays' element={<Birthday/>}/>
               <Route exact path='/gallery-products' element={<Product/>}/>
               <Route exact path='/gallery-family' element={<Family/>}/>
+              <Route path='*' element={<NotFound/>}/>
       </Routes>
       </AnimatePresence>
-        </div>
+        </main>
   )
 }
 

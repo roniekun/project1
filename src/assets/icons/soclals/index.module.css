@@ -20,22 +20,19 @@
 
 .socialLink{
    font-size: 18px;
-   transition: .3s;
    text-decoration: none;
    user-select: none;
 }
 
 .iconContainer svg {
-    width: 1.4vw;
-    height: 1.4vw;
+    width: 1rem;
+    height: 1rem;
     opacity: 1;
-    transition: .3s;
     margin: 0;
   }
 
 .iconContainer svg:hover{
 
-    transition: .3s;
     filter: brightness(90%);
 }
 
@@ -55,8 +52,4 @@
   padding: 0px 0px 0px 0px;
 }
 
-.iconContainer svg {
-  width: 18px;
-  height:18px;
-}
 }

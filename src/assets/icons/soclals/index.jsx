@@ -49,7 +49,6 @@ const Socials = ({
         style={{...containerProps}}>
           {socialMediaLinks.map((link) => (
             <div         
-              style={{...iConProps}} 
               key={link.name}
               className={styles.iconContainer}>  
                 <a

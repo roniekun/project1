@@ -13,9 +13,10 @@ const Home = ({setColor, color, setBgColor, bgColor, wtColor,btColor}) => {
   const secta = useRef(null);
   const sectb = useRef(null);
 
+  // Header Props
   useEffect(() => {
     setColor('#181818');
-    setBgColor('transparent')
+    setBgColor('rgba(250,250,250,.3)')
   }, [])
 
   useEffect(() => {
@@ -56,22 +57,20 @@ const Home = ({setColor, color, setBgColor, bgColor, wtColor,btColor}) => {
     window.scrollTo(0, 0); // Scroll to the top of the page
 }
   // Animations
-
-  
   useEffect(() => {
     // Register the ScrollTrigger plugin
     gsap.registerPlugin(ScrollTrigger);
 
     const trigger = ScrollTrigger.create({
       trigger: secta.current,
-      start: "top+=160px top",
+      start: "top-=80px top",
       end: "bottom bottom",
       onEnter: () => {
         setBgColor(btColor);
         setColor('whitesmoke');
       },
       onLeaveBack: () => {
-        setBgColor(wtColor);
+        setBgColor('transparent');
         setColor('black');
       },
     });
@@ -83,69 +82,71 @@ const Home = ({setColor, color, setBgColor, bgColor, wtColor,btColor}) => {
 
   return (
   <motion.div 
-  initial={{zIndex: 2, opacity: 0 }}
-  animate={{opacity:1, y:0, zIndex: 1 }}
-  transition={{duration: .3}}
-  className={styles.container}>
+    initial={{zIndex: 2, opacity: 0 }}
+    animate={{opacity:1, zIndex: 1 }}
+    transition={{duration: .3}}
+    className={styles.container}>
+      
+    <section
+     className={styles.pageOne}>
+      <div className={styles.filter}></div>
+        <div className={styles.heroContainer }>
+          <section className={styles.textSection}>
+            <div
+            className={styles.titleContainer}>
+            <h1 >
+              Portfolio <br /> Website
+            </h1>
+            </div>
+            <div className={styles.descContainer}>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              illum id unde aperiam perferendis eius corporis voluptas doloribus?</p>
+            </div>
+            <button 
+              className={styles.btn}>
+              Book an appointment
+            </button>
+          </section>
+          <section className={styles.imgSection}>
+            <div className={styles.imgContainer}>
+            <img 
+            className={styles.heroImage}
+            src="" alt="" />
+            </div>
+            <div className={styles.idContainer}>
+            <h1>Your Name</h1>
+            <h4>Photographer and Film Maker</h4>
+            </div>     
+          </section>
+       </div>
+       </section>
 
-    <div
+
+{/* ================================= */}
+
+    <section
     ref={secta}
-      className={styles.secta}>
-
-    <div className={styles.heroContainer}>
-      <h1 className={styles.hero}>
-          Custom Title
-      </h1>
-      </div>
-
-      <div styles={styles.socialContainer}>
-    </div>
-    <div className={styles.itemContainer}>
-      <p>Doloribus modi accusamus recusandae quibusdam eligendi assumenda numquam facilis ad voluptatem reprehenderit.
-         Ullam cupiditate aliquid alias, voluptates rerum voluptate! Iure, omnis labore!</p>
-    <div className={styles.btnContainer}>
-    <button onClick={handleExplore} className={styles. explore}>
-       Explore
-    </button>
-      <NavLink to='/contact'onClick={()=> {handleContact()}} className={styles. contact}>
-         Get in touch
-         </NavLink>
-    </div>
-    </div>
-    </div>
-
-    <motion.div
-      ref={sectb}
-          className={styles.sectb}>
-            <div className={styles.category}>
-              <h5>Category</h5>
-              <div className={styles.lists}>
-                {data.map((category, index) => (
-                  <li key={index} onClick={() => handleClick(index)} >
-                    {category.category}
-                  </li>
-                ))}
+      className={styles.pageTwo}>
+        <div className={styles.titleContainer}>
+          <h1>Featured Projects</h1>
         </div>
-      </div>
-      <div className={styles.gallery}>
-        <div className={styles.slidesContainer}>
-          {data.map((image, index) => (
-         <Slideshow 
-         onClick={()=>handleImgClick(image.to)}
-         containerProps={{ opacity: index === selected ? 1 : 0,
-          transitionDuration: '.7s',
-           zIndex: index === selected ? 1 : -1}}
-           image={image} key={index}/>
-        ) )}
-        </div >
+        <div className={styles.gallery}>
+        { data.map((album, index) => (
+          <div  key={index}
+          className={styles.album}>
+         <h2>
+            {album.category}
+          </h2>
 
-              <div className={styles.arrowContainer}>
-          <span onClick={handlePrevClick}>Previous</span>
-          <span onClick={handleNextClick}>Next</span>
+          </div>
+
+        ))
+        }
+          
         </div>
+        
+    </section>
 
-      </div>
-    </motion.div>
     </motion.div>
   );
 };
